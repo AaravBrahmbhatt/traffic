@@ -1,0 +1,14 @@
+Flask
+Flask-SQLAlchemy
+Flask-Login
+Flask-WTF
+WTForms
+Flask-Bcrypt
+mss
+numpy
+pandas
+ultralytics
+Pillow
+opencv-python
+scikit-learn
+gunicorn
