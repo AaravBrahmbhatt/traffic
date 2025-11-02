@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Velox Corp. - Smarter Traffic Insights</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.7s forwards;
+      animation-delay: var(--delay, 0s);
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .text-shadow-white-glow {
+      text-shadow:
+        0 0 6px rgba(255, 255, 255, 0.9),
+        0 0 10px rgba(255, 255, 255, 0.6),
+        0 0 20px rgba(255, 255, 255, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 bg-black/95 border-b border-gray-800 z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
+      <img
+        src="{{ url_for('static', filename='uploads/officiallogo.png') }}"
+        alt="Velox Corp. Logo"
+        class="w-20 h-20 object-contain"
+      />
+      <div class="absolute left-1/2 transform -translate-x-1/2 text-4xl font-semibold flex items-baseline gap-1">
+        <span class="text-white text-shadow-white-glow">Velox</span>
+        <span class="text-xs font-light text-gray-400 self-start mr-20">Corp.</span>
+      </div>
+      <div class="space-x-6 text-gray-300 font-medium">
+        <a href="/#features" class="hover:text-white transition">Features</a>
+        <a href="#about" class="hover:text-white transition">About</a>
+        <a href="#contact" class="hover:text-white transition">Contact</a>
+        <a href="/traffic" class="hover:text-white transition">Analysis</a>
+        <a href="/drone" class="hover:text-white transition">Drone Feed</a>
+        <a href="/logout" class="hover:text-white transition">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative min-h-screen flex items-center px-6 max-w-6xl mx-auto pt-28 overflow-hidden">
+
+    <!-- Rounded gradient blobs -->
+    <div class="absolute -top-40 -left-40 w-[800px] h-[600px] bg-gradient-to-r from-blue-600 via-purple-600 to-pink-500 rounded-full blur-3xl opacity-30"></div>
+    <div class="absolute -bottom-40 -right-40 w-[700px] h-[700px] bg-gradient-to-br from-pink-500 via-purple-600 to-blue-600 rounded-full blur-3xl opacity-30"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 flex-1 max-w-xl fade-in" style="--delay: 0s;">
+      <h1 class="text-5xl font-bold mb-4 text-left">Smarter Traffic Insights</h1>
+      <p class="text-gray-300 text-lg mb-10 leading-relaxed text-left">
+        Predict traffic wait times, accident risks, and CO₂ emissions — powered by AI.
+      </p>
+      <a href="#features" class="inline-block 
+          bg-white/10 backdrop-blur-md 
+          text-white font-semibold 
+          px-8 py-3 
+          border border-white/20 
+          rounded-full 
+          hover:bg-white/20 hover:border-white 
+          hover:shadow-[0_0_20px_4px_rgba(255,255,255,0.3)] 
+          transition ml-5">
+        Explore Features</a>
+      <a href="#contact" class="inline-block 
+          bg-white/10 backdrop-blur-md 
+          text-white font-semibold 
+          px-8 py-3 
+          border border-white/20 
+          rounded-full 
+          hover:bg-white/20 hover:border-white 
+          hover:shadow-[0_0_20px_4px_rgba(255,255,255,0.3)] 
+          transition ml-5">
+        Get In Touch</a>
+    </div>
+
+    <!-- Logo -->
+    <div
+      class="relative rounded-full flex items-center justify-center select-none mx-auto z-10"
+      style="
+        width: 400px;
+        height: 400px;  
+        background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 70%);
+        box-shadow: inset 0 0 40px 10px rgba(255, 255, 255, 0.3);
+      "
+    >
+      <img
+        src="{{ url_for('static', filename='uploads/officiallogo.png') }}"
+        alt="Velox Corp. Logo"
+        style="width: 700px; height: 700px; object-fit: contain; padding-top: 40px;"
+      />
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 max-w-5xl mx-auto px-6 fade-in my-24 relative" style="--delay: 0.6s;">
+    <!-- Gradient accent -->
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl"></div>
+
+    <h2 class="relative z-10 text-3xl font-semibold mb-10 text-center">Features</h2>
+    <div class="relative z-10 grid md:grid-cols-3 gap-10 text-gray-300">
+      <div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-lg p-6 hover:bg-white/20 hover:border-white/20 transition shadow-lg hover:shadow-[0_0_20px_4px_rgba(255,255,255,0.3)]">
+        <h3 class="font-semibold text-xl mb-3 text-white">AI-Powered Detection</h3>
+        <p>Accurately detect and count vehicles using cutting-edge YOLO models.</p>
+      </div>
+      <div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-lg p-6 hover:bg-white/20 hover:border-white/20 transition shadow-lg hover:shadow-[0_0_20px_4px_rgba(255,255,255,0.3)]">
+        <h3 class="font-semibold text-xl mb-3 text-white">Predictive Analytics</h3>
+        <p>Estimate wait times, accident probabilities, and environmental impact.</p>
+      </div>
+      <div class="bg-white/10 backdrop-blur-md border border-white/10 rounded-lg p-6 hover:bg-white/20 hover:border-white/20 transition shadow-lg hover:shadow-[0_0_20px_4px_rgba(255,255,255,0.3)]">
+        <h3 class="font-semibold text-xl mb-3 text-white">Clear Visualizations</h3>
+        <p>View annotated traffic images alongside intuitive statistics.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 max-w-4xl mx-auto px-6 fade-in my-24 relative" style="--delay: 0.8s;">
+    <!-- Gradient accent -->
+    <div class="absolute inset-0 bg-gradient-to-l from-purple-500/10 via-blue-500/10 to-pink-500/10 rounded-3xl"></div>
+
+    <h2 class="relative z-10 text-3xl font-semibold mb-6 text-center">About Velox Corp.</h2>
+    <p class="relative z-10 text-gray-300 max-w-3xl mx-auto text-center leading-relaxed">
+      Velox Corp. leverages AI and machine learning to provide real-time traffic insights that help cities optimize flow, reduce congestion, and lower environmental impact. Our mission is to make urban travel smarter, safer, and cleaner.
+    </p>
+  </section>
+
+  <!-- Contact Section -->
+  <footer id="contact" class="py-12 bg-gradient-to-r from-blue-700 via-purple-700 to-pink-700 text-center text-gray-200 fade-in my-24" style="--delay: 1s;">
+    <p class="underline hover:text-white">Contact us at _____</p>
+    <p class="mt-2">&copy; 2025 Velox Corp.</p>
+  </footer>
+
+</body>
+</html>

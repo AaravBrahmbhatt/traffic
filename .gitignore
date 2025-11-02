@@ -1,0 +1,15 @@
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+venv/
+env/
+
+# Large ML models
+backend/models/*.pt
+
+# System / IDE files
+.DS_Store
+Thumbs.db

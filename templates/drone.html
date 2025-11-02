@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drone Feed</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white font-sans">
+
+  <div class="flex min-h-screen">
+
+     <!-- Navbar -->
+ <nav id="navbar" class="fixed top-0 left-0 right-0 bg-black bg-opacity-95 border-b border-gray-800 z-50">
+  <div class="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
+    <a href="/" aria-label="Velox Corp home" >
+      <img src="{{ url_for('static', filename='uploads/officiallogo.png') }}"
+      alt="Velox Corp. Logo"
+      class="w-20 h-20 object-contain">
+  </a>
+    <div class="absolute left-1/2 transform -translate-x-1/2 text-4xl font-semibold flex items-baseline gap-1">
+      <span class="text-white text-shadow-white-glow">Velox</span>
+      <span class="text-xs font-light text-gray-400 self-start">Corp.</span>
+    </div>
+    <div class="space-x-7 text-gray-300 font-medium">
+      <a href="/" class="hover:text-white transition">Home</a>
+      <a href="/#features" class="hover:text-white transition">Features</a>
+      <a href="/#about" class="hover:text-white transition">About</a>
+      <a href="/#contact" class="hover:text-white transition">Contact</a>
+      <a href="/logout" class="hover:text-white transition">Logout</a>
+    </div>
+  </div>
+   <style>
+    .text-shadow-white-glow {
+      text-shadow:
+        0 0 6px rgba(255, 255, 255, 0.9),
+        0 0 10px rgba(255, 255, 255, 0.6),
+        0 0 20px rgba(255, 255, 255, 0.4);
+    }
+  </style>
+  </nav>
+
+
+    <!-- Left Instructions -->
+    <div class="w-1/5 p-6 flex flex-col justify-center bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 border-r border-gray-700">
+      <h2 class="text-2xl font-bold mb-4">Instructions</h2>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>Download a screen mirroring app.</li>
+        <li>Run the app on the right side of your screen.</li>
+        <li>Use a camera drone app to track drone view.</li>
+        <li>Watch as vehicles get detected in real time.</li>
+        <li><strong>BE PATIENT, OBJECT DETECTION TAKES TIME TO LOAD</strong></li>
+      </ol>
+    </div>
+
+    <!-- Center Drone Feed -->
+    <div class="flex-1 flex items-center justify-center p-6">
+      <div class="relative w-full max-w-4xl">
+        <img src="{{ url_for('static', filename='uploads/officiallogo.png') }}" 
+             class="absolute top-4 left-4 w-32 opacity-20 pointer-events-none" alt="Logo">
+        <img src="{{ url_for('drone_feed') }}" alt="Drone Feed" class="w-full rounded-lg border border-gray-700 shadow-lg">
+      </div>
+    </div>
+
+    <!-- Right Instructions (duplicate or extra info if needed) -->
+    <div class="w-1/5 p-6 flex flex-col justify-center bg-gradient-to-br from-blue-600 via-purple-600 to-pink-500 border-l border-gray-700">
+      <h2 class="text-2xl font-bold mb-4">Tips</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Keep the drone camera steady.</li>
+        <li>Ensure good lighting for better detection.</li>
+        <li>Refresh if the feed lags.</li>
+      </ul>
+    </div>
+
+  </div>
+  
+</body>
+</html>
