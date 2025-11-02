@@ -13,3 +13,4 @@ backend/models/*.pt
 # System / IDE files
 .DS_Store
 Thumbs.db
+best.pt
