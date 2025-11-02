@@ -88,7 +88,7 @@ model_accident.fit(X_train, y_accident_train)
 model_co2 = RandomForestRegressor(n_estimators=100, random_state=42)
 model_co2.fit(X_train, y_co2_train)
 
-model_yolo = YOLO("best.pt")
+model_yolo = YOLO("yolo12n.pt")
 
 vehicle_weights = {"car": 1.0, "truck": 1.5, "bus": 2.0, "motor": 0.5}
 
